@@ -1,13 +1,19 @@
+#include "demo.h"
 #include "cJSON.h"
+#include <stdio.h>
+#include "func.h"
 
-int parser_print(const char* str){
-     cJSON *monitor_json = cJSON_Parse(str);
-     if(!monitor_json) {
-         return -2;
-     }
-     cJSON *name = cJSON_GetObjectItemCaseSensitive(monitor_json, "name");
-     if(name == 0) {
-         return -1;
-     }
-    return 0;
+All parser_print(const char *str)
+{
+    All all = {0};
+    cJSON *monitor_json = cJSON_Parse(str);
+    if (!monitor_json)
+    {
+        printf("error\n");
+        return all;
+    }
+    to_string("name",  monitor_json, all.name);
+    to_number("value", monitor_json, &all.value);
+    cJSON_Delete(monitor_json);
+    return all;
 }
