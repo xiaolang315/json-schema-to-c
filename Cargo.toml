@@ -9,3 +9,4 @@ exclude = ["./build", "./deps"]
 
 [dependencies]
 file = "1.0.0"
+serde_json = "1.0.66"

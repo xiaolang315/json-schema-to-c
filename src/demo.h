@@ -1,6 +1,7 @@
+
 #ifdef __cplusplus
 extern "C" {
-#endif
+#endif 
 
 typedef struct All{
     char name[100];
@@ -9,6 +10,8 @@ typedef struct All{
 
 All parser_print(const char* str);
 
+    
 #ifdef __cplusplus
 }
-#endif
+#endif 
+
